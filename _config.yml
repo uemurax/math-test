@@ -1,11 +1,11 @@
-title: Krater
-email: paolo.brasolin+krater@gmail.com
+title: Math Test
+email: t.uemura00@gmail.com
 description: >-
-  Krater is a template for math-intensive Jekyll websites.
-baseurl: &baseurl "/krater"
-url: "https://paolobrasolin.github.io/"
-twitter_username: paolobrasolin
-github_username: paolobrasolin
+  Test page for Krater, a template for math-intensive Jekyll websites.
+baseurl: &baseurl "/math-test"
+url: "https://uemurax.github.io/"
+twitter_username: t_uemura669101
+github_username: uemurax
 
 theme: minima
 
