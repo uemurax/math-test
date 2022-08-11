@@ -1,2 +1,4 @@
 _site
 .antex-cache
+.bundle
+vendor

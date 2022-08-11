@@ -30,6 +30,13 @@ antex:
     display_math: false
     inline_math: false
     inline_macro: false
+  commands:
+    latexmk:
+      command:
+        - "latexmk"
+        - "-dvi"
+        - "-output-directory={{ dir.work }}"
+        - "{{ file.tex }}"
 
 plugins:
   - jekyll-feed
