@@ -2,4 +2,4 @@ latexmk
 dvisvgm
 commutative-diagrams
 standalone
-tikz
+pgf
