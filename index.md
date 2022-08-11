@@ -6,7 +6,8 @@ katex:
 antex:
   preamble: >-
     \usepackage{amsmath,amsfonts}
-    \usepackage[all]{xy}
+    \usepackage{tikz}
+    \usetikzlibrary{cd}
 ---
 
 **Welcome to `krater`!**
@@ -40,8 +41,18 @@ A pretty diagram:
 
 {% tex classes: [antex, display] %}
 $
-\xymatrix{ A\ar[r]^f \ar[d]_f & B \ar[dl]|{\hole\mathrm{id}_B\hole} \ar[d]^g \\ C \ar[r]_g & D}
+\begin{tikzcd}
+A \arrow[r, "f"] \arrow[d, "f"'] &
+B \arrow[d, "g"] \arrow[dl, "\mathrm{id}_{B}"{description}] \\
+C \arrow[r, "g"'] &
+D
+\end{tikzcd}
 \qquad
-\xymatrix{ A\ar[r]^f \ar[d]_{g\circ f} & B \ar[dl]|{\hole g\hole} \ar[d]^{h\circ g} \\ B \ar[r]_h & C}
+\begin{tikzcd}
+A \arrow[r, "f"] \arrow[d, "g \circ f"'] &
+B \arrow[d, "h \circ g"] \arrow[dl, "g"{description}] \\
+B \arrow[r, "h"'] &
+C
+\end{tikzcd}
 $
 {% endtex %}
