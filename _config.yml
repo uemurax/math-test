@@ -14,6 +14,7 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
   math_engine: null # disable math engine and let the client side use KaTeX for simple LaTeX
+  parse_block_html: true
 
 katex:
   macros:
@@ -47,15 +48,15 @@ collections:
 sheafy:
   taxa:
     definition:
-      layout: sheafy/tree/default
+      layout: default
       sublayout: sheafy/node/result
       genus: Definition
       clicker: result
     section:
-      layout: sheafy/tree/default
-      sublayout: sheafy/node/result
+      layout: default
+      sublayout: sheafy/node/section
       genus: Section
-      clicker: result
+      clicker: section
 
 exclude:
   # non default values:

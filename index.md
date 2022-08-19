@@ -57,6 +57,8 @@ C
 $
 {% endtex %}
 
+Experiments with [jekyll-sheafy](https://github.com/paolobrasolin/jekyll-sheafy).
+
 {% for lecture in site.lectures %}
   <a href="{{ lecture.url | relative_url }}">{{ lecture.title }}</a>
 {% endfor %}
