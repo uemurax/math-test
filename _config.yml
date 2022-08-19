@@ -38,8 +38,24 @@ antex:
         - "-output-directory={{ dir.work }}"
         - "{{ file.tex }}"
 
-plugins:
-  - jekyll-feed
+collections:
+  lectures:
+    output: true
+  nodes:
+    output: true
+
+sheafy:
+  taxa:
+    definition:
+      layout: sheafy/tree/default
+      sublayout: sheafy/node/result
+      genus: Definition
+      clicker: result
+    section:
+      layout: sheafy/tree/default
+      sublayout: sheafy/node/result
+      genus: Section
+      clicker: result
 
 exclude:
   # non default values:
