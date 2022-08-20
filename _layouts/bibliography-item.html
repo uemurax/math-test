@@ -4,6 +4,9 @@
 {% if entry.doi %}
 <a href="https://doi.org/{{ entry.doi }}">doi:{{ entry.doi }}</a>
 {% endif %}
+{% if entry.archiveprefix == "arXiv" %}
+<a href="https://arxiv.org/abs/{{ entry.eprint }}">arXiv:{{ entry. eprint }}</a>
+{% endif %}
 {% if entry.url %}
 <a href="{{ entry.url }}">{{ entry.url }}</a>
 {% endif %}
