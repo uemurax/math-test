@@ -57,6 +57,11 @@ sheafy:
       sublayout: sheafy/node/section
       genus: Section
       clicker: section
+    theorem:
+      layout: default
+      sublayout: sheafy/node/result
+      genus: Theorem
+      clicker: result
 
 exclude:
   # non default values:
