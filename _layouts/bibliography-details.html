@@ -2,10 +2,13 @@
 layout: default
 ---
 
+{% assign entry = page.entry %}
+
 <div class="text-justify">
   {{page.reference}}
+  {% include bibliography-item-extra.html %}
 </div>
 
 <div class="bibtex-code">
-  <pre>{{ page.entry.bibtex }}</pre>
+  <pre>{{ entry.bibtex }}</pre>
 </div>
