@@ -43,6 +43,9 @@ antex:
         - "-output-directory={{ dir.work }}"
         - "{{ file.tex }}"
 
+header_pages:
+  -
+
 collections:
   lectures:
     output: true
@@ -52,20 +55,25 @@ collections:
 sheafy:
   taxa:
     definition:
-      layout: default
+      layout: sheafy/tree/default
       sublayout: sheafy/node/result
       genus: Definition
       clicker: result
     section:
-      layout: default
+      layout: sheafy/tree/default
       sublayout: sheafy/node/section
       genus: Section
       clicker: section
     theorem:
-      layout: default
+      layout: sheafy/tree/default
       sublayout: sheafy/node/result
       genus: Theorem
       clicker: result
+
+scholar:
+  bibliography: references.bib
+  details_layout: bibliography-details.html
+  details_permalink: ':details_dir/:key:extension'
 
 exclude:
   # non default values:
@@ -75,6 +83,7 @@ exclude:
   - antex-macros/
   - src/
   - Makefile
+  - _bibliography/
   # default values:
   - .sass-cache/
   - .jekyll-cache/

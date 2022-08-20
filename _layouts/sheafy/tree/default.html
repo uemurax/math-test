@@ -2,6 +2,10 @@
 layout: default
 ---
 
-<section>
-  {{ content }}
-</section>
+{{ content }}
+
+{% capture bibliography_count_cited %}{% bibliography_count --cited %}{% endcapture %}
+{% if bibliography_count_cited != "0" %}
+<h4>Bibliography</h4>
+{% bibliography --cited %}
+{% endif %}
