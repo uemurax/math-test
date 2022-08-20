@@ -74,6 +74,9 @@ scholar:
   bibliography: references.bib
   details_layout: bibliography-details.html
   details_permalink: ':details_dir/:key:extension'
+  details_link: '[Details]'
+  bibliography_template: bibliography-item
+  style: apa-no-doi-no-issue
 
 exclude:
   # non default values:
