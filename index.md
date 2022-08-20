@@ -3,11 +3,6 @@ layout: home
 katex:
   macros:
     "\\MyLocalMacro": "\\LaTeX"
-antex:
-  preamble: >-
-    \usepackage{amsmath,amsfonts}
-    \usepackage{tikz}
-    \usetikzlibrary{cd}
 ---
 
 **Welcome to `krater`!**
@@ -49,10 +44,10 @@ D
 \end{tikzcd}
 \qquad
 \begin{tikzcd}
-A \arrow[r, "f"] \arrow[d, "g \circ f"'] &
-B \arrow[d, "h \circ g"] \arrow[dl, "g"{description}] \\
-B \arrow[r, "h"'] &
-C
+\cat{A} \arrow[r, "f"] \arrow[d, "g \circ f"'] &
+\cat{B} \arrow[d, "h \circ g"] \arrow[dl, "g"{description}] \\
+\cat{B} \arrow[r, "h"'] &
+\cat{C}
 \end{tikzcd}
 $
 {% endtex %}

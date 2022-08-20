@@ -4,7 +4,7 @@
   const siteOpt = JSON.parse({{ site.katex | jsonify | inspect }});
   renderMathInElement(document.body, {
   ...siteOpt,
-  macros: {% include katex-macros.json %}
+  macros: {% include simple-macros.katex.json %}
   });
 '></script>
 

@@ -30,9 +30,14 @@ antex:
     display_math: false
     inline_math: false
     inline_macro: false
+  preamble: >-
+    \usepackage{simple-macros}
+    \usepackage{tikz}
+    \usetikzlibrary{cd}
   commands:
     latexmk:
       command:
+        - "TEXINPUTS=./antex-macros/:${TEXINPUTS}"
         - "latexmk"
         - "-dvi"
         - "-output-directory={{ dir.work }}"
@@ -66,6 +71,10 @@ exclude:
   # non default values:
   - README.md
   - krater.png
+  - bin/
+  - antex-macros/
+  - src/
+  - Makefile
   # default values:
   - .sass-cache/
   - .jekyll-cache/
