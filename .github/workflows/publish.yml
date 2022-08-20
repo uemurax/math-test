@@ -13,8 +13,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install system dependencies
-        run: sudo apt-get install -y ghostscript
+        run: sudo apt-get install -y ghostscript jq
         # jekyll-antex -> antex -> dvisvgm -> ghostscript
+        # We use jq to generate tex macros
 
       - name: Setup Ruby
         uses: actions/setup-ruby@v1
@@ -48,6 +49,9 @@ jobs:
           path: .antex-cache
           key: antex-cache-${{ hashFiles('.github/texlive.packages', '.github/texlive.profile') }}
           restore-keys: antex-cache-
+
+      - name: Generate TeX macros
+        run: make macros
 
       - name: Build
         run: bundle exec jekyll build
