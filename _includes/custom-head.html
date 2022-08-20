@@ -2,9 +2,10 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous" onload='
   const siteOpt = JSON.parse({{ site.katex | jsonify | inspect }});
-  const pageOpt = JSON.parse({{ page.katex | jsonify | inspect }});
-  const joinOpt = { ...siteOpt, ...pageOpt, macros: { ...siteOpt.macros, ...pageOpt.macros }};
-  renderMathInElement(document.body, joinOpt);
+  renderMathInElement(document.body, {
+  ...siteOpt,
+  macros: {% include katex-macros.json %}
+  });
 '></script>
 
 <style>

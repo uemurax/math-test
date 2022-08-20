@@ -17,13 +17,12 @@ kramdown:
   parse_block_html: true
 
 katex:
-  macros:
-    "\\MyGlobalMacro": "\\LaTeX"
   delimiters:
     - { left: "$", right: "$", display: false }
     - { left: "$$", right: "$$", display: true }
     - { left: "\\(", right: "\\)", display: false }
     - { left: "\\[", right: "\\]", display: true }
+  # Macros are defined in _includes/katex-macros.json
 
 antex:
   url_path_prefix: *baseurl
