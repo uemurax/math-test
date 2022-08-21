@@ -2,10 +2,18 @@
 layout: default
 ---
 
-{{ content }}
+<article class="post">
+  <nav>
+    {% include breadcrumbs.html list=page.ancestors %}
+  </nav>
 
-{% capture bibliography_count_cited %}{% bibliography_count --cited %}{% endcapture %}
-{% if bibliography_count_cited != "0" %}
-<h4>Bibliography</h4>
-{% bibliography --cited %}
-{% endif %}
+  <div class="post=content">
+    {{ content }}
+  </div>
+
+  {% capture bibliography_count_cited %}{% bibliography_count --cited %}{% endcapture %}
+  {% if bibliography_count_cited != "0" %}
+  <h4>Bibliography</h4>
+  {% bibliography --cited %}
+  {% endif %}
+</article>
