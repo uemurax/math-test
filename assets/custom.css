@@ -1,3 +1,7 @@
 header.inline .genus {
     font-weight: bold;
 }
+
+.slug {
+    color: gray !important;
+}
