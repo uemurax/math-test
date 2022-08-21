@@ -1,0 +1,23 @@
+.collapsible-button {
+    cursor: pointer;
+    border: none;
+    text-align: left;
+    outline: none;
+}
+
+.collapsible-button:hover {
+    background-color: #ccc;
+}
+
+.collapsible-content {
+    display: none;
+    overflow: hidden;
+}
+
+.collapsible-button:after {
+    content: '⊞';
+}
+
+.collapsible-open:after {
+    content: '⊟';
+}
