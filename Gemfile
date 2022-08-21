@@ -10,3 +10,5 @@ group :jekyll_plugins do
   gem 'jekyll-sheafy', '~> 0.3.0'
   gem 'jekyll-scholar', '~> 7.0'
 end
+
+gem 'git', '~> 1.12.0'

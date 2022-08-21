@@ -7,6 +7,10 @@ url: "https://uemurax.github.io/"
 twitter_username: t_uemura669101
 github_username: uemurax
 
+safe: false
+
+source: .
+
 theme: minima
 
 markdown: kramdown
@@ -44,7 +48,7 @@ antex:
         - "{{ file.tex }}"
 
 header_pages:
-  -
+  - changelog.md
 
 collections:
   lectures:
@@ -77,6 +81,11 @@ scholar:
   details_link: '[Details]'
   bibliography_template: bibliography-item
   style: apa-no-doi-no-issue
+
+git_log:
+  path:
+    - "_lectures/*.md"
+    - "_nodes/*.md"
 
 exclude:
   # non default values:
