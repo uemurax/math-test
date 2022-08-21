@@ -73,6 +73,11 @@ sheafy:
       sublayout: sheafy/node/result
       genus: Theorem
       clicker: result
+    proof:
+      layout: sheafy/tree/default
+      sublayout: sheafy/node/proof
+      genus: Proof
+      clicker: proof
 
 scholar:
   bibliography: references.bib
