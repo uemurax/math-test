@@ -49,6 +49,7 @@ antex:
 
 header_pages:
   - changelog.md
+  - search.md
 
 collections:
   lectures:
