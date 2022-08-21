@@ -74,7 +74,7 @@ sheafy:
       genus: Theorem
       clicker: result
     proof:
-      layout: sheafy/tree/default
+      layout: sheafy/tree/proof
       sublayout: sheafy/node/proof
       genus: Proof
       clicker: proof

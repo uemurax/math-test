@@ -10,14 +10,5 @@
 }
 
 .collapsible-content {
-    display: none;
     overflow: hidden;
-}
-
-.collapsible-button:after {
-    content: '⊞';
-}
-
-.collapsible-open:after {
-    content: '⊟';
 }

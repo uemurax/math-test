@@ -5,9 +5,10 @@
       <a class="slug" href="{{ page.url | relative_url }}">[{{ page.slug }}]</a>
       <span class='genus'>{{ page.genus }}</span>
       (<a class="slug" href="{% link _nodes/{{ page.of_theorem }}.md %}">[{{ page.of_theorem }}]</a>)
-      <button type="button" class="collapsible-button"></button>
+      <button type="button" class="collapsible-button">Show/Hide</button>
     </header>
-    <div class="collapsible-content">
+    <div class="collapsible-content"
+    style="display: {% if collapsible_proof_open %}block{% else %}none{% endif %};">
 {:/}
 {{ content }}
 {::nomarkdown}
