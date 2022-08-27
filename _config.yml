@@ -58,6 +58,9 @@ collections:
     output: true
 
 sheafy:
+  references:
+    matchers:
+      - !ruby/regexp /_nodes\/(?<slug>.+?).md/
   taxa:
     definition:
       layout: sheafy/tree/default

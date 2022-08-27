@@ -11,6 +11,22 @@ layout: default
     {{ content }}
   </div>
 
+  {% if page.referrers.size != 0 %}
+  <nav>
+    <h4>Referrers</h4>
+    <ul>
+      {% for resource in page.referrers %}
+      <li>
+        <a href="{{ resource.url | relative_url }}">
+          {{ resource.title }}
+          <span class="slug">[{{ resource.slug }}]</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  {% endif %}
+
   {% capture bibliography_count_cited %}{% bibliography_count --cited %}{% endcapture %}
   {% if bibliography_count_cited != "0" %}
   <h4>Bibliography</h4>
