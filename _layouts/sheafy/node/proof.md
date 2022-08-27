@@ -4,7 +4,7 @@
     <header class="inline">
       <a class="slug" href="{{ page.url | relative_url }}">[{{ page.slug }}]</a>
       <span class='genus'>{{ page.genus }}</span>
-      (<a class="slug" href="{% link _nodes/{{ page.of_theorem }}.md %}">[{{ page.of_theorem }}]</a>)
+      (<a class="slug" href="{% link _nodes/{{ page.of_proposition }}.md %}">[{{ page.of_proposition }}]</a>)
       <button type="button" class="collapsible-button">Show/Hide</button>
     </header>
     <div class="collapsible-content"
