@@ -26,7 +26,6 @@ katex:
     - { left: "$$", right: "$$", display: true }
     - { left: "\\(", right: "\\)", display: false }
     - { left: "\\[", right: "\\]", display: true }
-  # Macros are defined in _includes/katex-macros.json
 
 antex:
   url_path_prefix: *baseurl
@@ -35,7 +34,6 @@ antex:
     inline_math: false
     inline_macro: false
   preamble: >-
-    \usepackage{simple-macros}
     \usepackage{tikz}
     \usetikzlibrary{cd}
   commands:
@@ -46,6 +44,12 @@ antex:
         - "-dvi"
         - "-output-directory={{ dir.work }}"
         - "{{ file.tex }}"
+
+# Macros for both katex and antex
+tex_macros:
+  "\\cat":
+    body: "\\mathcal{#1}"
+    nargs: 1
 
 header_pages:
   - changelog.md

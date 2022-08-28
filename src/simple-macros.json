@@ -1,6 +1,0 @@
-{
-    "\\cat": {
-        "body": "\\mathcal{#1}",
-        "nargs": 1
-    }
-}

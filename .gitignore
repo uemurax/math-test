@@ -3,5 +3,3 @@ _site
 .bundle
 vendor
 .jekyll-cache
-_includes/simple-macros.katex.json
-antex-macros/simple-macros.sty
