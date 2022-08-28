@@ -1,7 +1,7 @@
 {% unless include.list.size == 0 %}
 <nav class="breadcrumbs">
   {% for resource in include.list %}
-  {% include ref.html node=resource numbering=true title=true %}
+  {% include ref.html node=resource show_numbering=true show_title=true %}
   /
   {% endfor %}
 </nav>

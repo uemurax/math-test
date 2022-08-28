@@ -2,7 +2,7 @@
   {% assign filtered_resources = include.page.children | where: "clicker", "section" %}
   {% for resource in filtered_resources %}
   <li>
-    {% include ref.html node=resource numbering=true title=true %}
+    {% include ref.html node=resource show_numbering=true show_title=true %}
     {% include toc.html page=resource %}
   </li>
   {% endfor %}

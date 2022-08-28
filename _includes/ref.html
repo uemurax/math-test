@@ -9,9 +9,9 @@
 {% endfor -%}
 {% endif -%}
 {% capture link_text -%}
-{% if include.genus %}{{ node.genus }}{% endif %}
-{% if include.numbering %}{% include numbering.html clicks=node.clicks %}{% endif %}
-{% if include.title %}{{ node.title }}{% endif %}
-{% if include.slug %}<span class="slug">[{{ node.slug }}]</span>{% endif %}
+{% if include.show_genus %}{{ node.genus }}{% endif %}
+{% if include.show_numbering %}{% include numbering.html clicks=node.clicks %}{% endif %}
+{% if include.show_title %}{{ node.title }}{% endif %}
+{% if include.show_slug %}<span class="slug">[{{ node.slug }}]</span>{% endif %}
 {% endcapture -%}
 <a href="{{ node.url | relative_url }}">{{ link_text | strip }}</a>

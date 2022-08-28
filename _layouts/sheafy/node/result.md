@@ -1,8 +1,7 @@
 <section id="{{ page.slug }}">
 {::nomarkdown}
   <header class="inline">
-    <a class="slug" href="{{ page.url | relative_url }}">[{{ page.slug }}]</a>
-    {% include numbering.html clicks=page.clicks %}
+    {% include ref.html node=page show_numbering=true %}
     <span class='genus'>{{ page.genus }}</span>
     ({{ page.title }})
   </header>
