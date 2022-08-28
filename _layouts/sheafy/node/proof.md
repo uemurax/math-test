@@ -8,7 +8,7 @@
       <button type="button" class="collapsible-button">Show/Hide</button>
     </header>
     <div class="collapsible-content"
-    style="display: {% if collapsible_proof_open %}block{% else %}none{% endif %};">
+    style="display: {% if page.subroot == page %}block{% else %}none{% endif %};">
 {:/}
 {{ content }}
 {::nomarkdown}
