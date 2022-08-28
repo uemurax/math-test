@@ -2,6 +2,7 @@
   {% assign filtered_resources = include.page.children | where: "clicker", "section" %}
   {% for resource in filtered_resources %}
   <li>
+    {% include numbering.html clicks=resource.clicks %}
     <a href="{{ resource.url | relative_url }}">
       {{ resource.title }}
     </a>

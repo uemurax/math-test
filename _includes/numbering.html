@@ -1,0 +1,6 @@
+{% capture numbering -%}
+{% for click in include.clicks -%}
+{% if click.clicker != "lecture" %}.{{ click.value | plus: 1 }}{% endif -%}
+{% endfor -%}
+{% endcapture -%}
+{{ numbering | remove_first: "." -}}

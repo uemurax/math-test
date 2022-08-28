@@ -57,6 +57,12 @@ collections:
   nodes:
     output: true
 
+defaults:
+  - scope:
+      type: lectures
+    values:
+      taxon: lecture
+
 sheafy:
   references:
     matchers:
@@ -81,7 +87,12 @@ sheafy:
       layout: sheafy/tree/default
       sublayout: sheafy/node/proof
       genus: Proof
-      clicker: proof
+      clicker: result
+    lecture:
+      layout: sheafy/tree/default
+      sublayout: sheafy/node/section
+      genus: Lecture
+      clicker: lecture
 
 scholar:
   bibliography: references.bib
