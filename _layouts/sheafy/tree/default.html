@@ -17,10 +17,7 @@ layout: default
     <ul>
       {% for resource in page.referrers %}
       <li>
-        <a href="{{ resource.url | relative_url }}">
-          {{ resource.title }}
-          <span class="slug">[{{ resource.slug }}]</span>
-        </a>
+        {% include ref.html node=resource genus=true numbering=true title=true slug=true %}
       </li>
       {% endfor %}
     </ul>

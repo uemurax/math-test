@@ -1,0 +1,17 @@
+{% if include.node -%}
+{% assign node = include.node -%}
+{% else -%}
+{% for n in site.nodes -%}
+{% if n.slug == include.slug -%}
+{% assign node = n -%}
+{% break -%}
+{% endif -%}
+{% endfor -%}
+{% endif -%}
+{% capture link_text -%}
+{% if include.genus %}{{ node.genus }}{% endif %}
+{% if include.numbering %}{% include numbering.html clicks=node.clicks %}{% endif %}
+{% if include.title %}{{ node.title }}{% endif %}
+{% if include.slug %}<span class="slug">[{{ node.slug }}]</span>{% endif %}
+{% endcapture -%}
+<a href="{{ node.url | relative_url }}">{{ link_text | strip }}</a>

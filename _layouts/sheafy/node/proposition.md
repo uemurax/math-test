@@ -10,7 +10,7 @@
       Proved at
       {% for proof in site.nodes | where: "taxon", "proof" %}
       {% if proof.of_proposition == page.slug %}
-      <a class="slug" href="{{ proof.url | relative_url }}">[{{ proof.slug }}]</a>
+      {% include ref.html node=proof numbering=true slug=true %}
       {% endif %}
       {% endfor %}
     </span>

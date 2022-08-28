@@ -1,10 +1,7 @@
 {% unless include.list.size == 0 %}
 <nav class="breadcrumbs">
   {% for resource in include.list %}
-  <a href="{{ resource.url | relative_url }}">
-    {% include numbering.html clicks=resource.clicks %}
-    {{ resource.title }}
-  </a>
+  {% include ref.html node=resource numbering=true title=true %}
   /
   {% endfor %}
 </nav>
