@@ -16,4 +16,37 @@ header.inline .genus {
     color: #676;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold !important;
+}
+
+h1 {
+    font-size: 2em !important;
+}
+
+h2 {
+    font-size: 1.6em !important;
+}
+
+h3 {
+    font-size: 1.3em !important;
+}
+
+h4 {
+    font-size: 1.2em !important;
+}
+
+h5 {
+    font-size: 1.1em !important;
+}
+
+h6 {
+    font-size: 1em !important;
+}
+
+ul.toc {
+    list-style-type: none;
+    margin-left: 10pt;
+}
+
 @import "collapsible";
