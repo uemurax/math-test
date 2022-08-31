@@ -3,9 +3,10 @@ module Jekyll
     def node_numbering(data)
       label = ""
       data['clicks'].each do |tick|
+        num = tick['value'] + 1
         label << case tick["clicker"]
-                 when "section" then ".#{tick["value"] + 1}"
-                 when "result" then ":#{tick["value"] + 1}"
+                 when "section" then ".#{num}"
+                 when "result" then ":#{num}"
                  else ""
                  end
       end
