@@ -6,7 +6,7 @@ module Jekyll
         num = tick['value'] + 1
         label << case tick["clicker"]
                  when "section" then ".#{num}"
-                 when "result" then ":#{num}"
+                 when "result" then "-#{num}"
                  else ""
                  end
       end
