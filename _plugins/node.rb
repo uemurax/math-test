@@ -1,32 +1,43 @@
 module Jekyll
   module NodeFilter
     def node_numbering(data)
-      label = ""
-      data['clicks'].each do |tick|
+      label = data['clicks'].reduce('') { |s, tick|
         num = tick['value'] + 1
-        label << case tick["clicker"]
-                 when "section" then ".#{num}"
-                 when "result" then "-#{num}"
-                 else ""
-                 end
-      end
+        s + case tick["clicker"]
+            when "section" then ".#{num}"
+            when "result" then "-#{num}"
+            else ""
+            end
+      }
       label[1..]
     end
 
     def node_url(data)
-      "#{@context.registers[:site].baseurl}#{data['url']}"
+      Liquid::Template.parse("{{ \"#{data['url']}\" | relative_url }}").render(@context)
+    end
+
+    def node_ref_nolink(data)
+      node_numbering(data)
     end
 
     def node_ref(data)
-      "<a href='#{node_url(data)}'>#{node_numbering(data)}</a>"
+      "<a href='#{node_url(data)}'>#{node_ref_nolink(data)}</a>"
+    end
+
+    def node_cref_nolink(data)
+      "#{data['genus']} #{node_ref_nolink(data)}"
     end
 
     def node_cref(data)
-      "<a href='#{node_url(data)}'>#{data['genus']} #{node_numbering(data)}</a>"
+      "<a href='#{node_url(data)}'>#{node_cref_nolink(data)}</a>"
+    end
+
+    def node_has_title?(data)
+      data['title'] != data['slug'].downcase
     end
 
     def node_fullref_nolink(data)
-      "#{data['genus']} #{node_numbering(data)}: #{data['title']}"
+      node_cref_nolink(data) + (node_has_title?(data) ? ": #{data['title']}" : '')
     end
 
     def node_fullref(data)
