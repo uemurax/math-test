@@ -70,7 +70,7 @@ defaults:
 sheafy:
   references:
     matchers:
-      - !ruby/regexp /_nodes\/(?<slug>.+?).md/
+      - !ruby/regexp /{%\s*node "(?<slug>.+?)"\s*(\|.+)?%}/
   taxa:
     definition:
       layout: sheafy/tree/default

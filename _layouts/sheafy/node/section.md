@@ -3,7 +3,7 @@
 {::nomarkdown}
   <header>
     <h{{ page.depth | plus: 1 }}>
-      {% include numbering.html clicks=page.clicks %}
+      {{ page | node_numbering }}
       {{ page.title }}
     </h{{ page.depth | plus: 1 }}>
   </header>

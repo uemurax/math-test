@@ -17,7 +17,7 @@ layout: default
     <ul>
       {% for resource in page.referrers %}
       <li>
-        {% include ref.html node=resource show_genus=true show_numbering=true show_title=true %}
+        {{ resource | node_fullref }}
       </li>
       {% endfor %}
     </ul>

@@ -7,10 +7,10 @@
 <section id="{{ page.slug }}">
   {% unless is_subroot %}<div class="collapsible">{% endunless %}
     <header class="inline">
-      {% include ref.html node=page show_numbering=true %}
+      {{ page | node_ref }}
       <span class='genus'>
         {{ page.genus }} of
-        {% include ref.html slug=page.of_proposition show_numbering=true show_genus=true -%}
+        {% node page.of_proposition | node_cref %}
       </span>
       {% unless is_subroot %}<button type="button" class="collapsible-button">Show/Hide</button>{% endunless %}
     </header>
