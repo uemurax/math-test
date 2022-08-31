@@ -1,0 +1,16 @@
+<nav class="d-pad">
+  {% assign prev = include.page.predecessors | last %}
+  {% assign next = include.page.successors | first %}
+
+  {% if prev %}
+  <a class="prev" href="{{ prev.url | relative_url }}">
+    ← {{ prev | node_fullref_nolink }}
+  </a>
+  {% endif %}
+
+  {% if next %}
+  <a class="next" href="{{ next.url | relative_url }}">
+    {{ next | node_fullref_nolink }} →
+  </a>
+  {% endif %}
+</nav>

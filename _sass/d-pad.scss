@@ -1,0 +1,9 @@
+nav.d-pad {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+nav.d-pad a.prev { text-align: right; }
+nav.d-pad a.next { text-align: left; }

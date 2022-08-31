@@ -25,8 +25,12 @@ module Jekyll
       "<a href='#{node_url(data)}'>#{data['genus']} #{node_numbering(data)}</a>"
     end
 
+    def node_fullref_nolink(data)
+      "#{data['genus']} #{node_numbering(data)}: #{data['title']}"
+    end
+
     def node_fullref(data)
-      "<a href='#{node_url(data)}'>#{data['genus']} #{node_numbering(data)}: #{data['title']}</a>"
+      "<a href='#{node_url(data)}'>#{node_fullref_nolink(data)}</a>"
     end
   end
 
