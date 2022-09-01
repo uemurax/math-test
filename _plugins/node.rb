@@ -54,6 +54,8 @@ module Jekyll
   end
 
   class NodeTag < Liquid::Tag
+    DATA_KEY = 'node_data'
+
     def initialize(tag_name, text, tokens)
       super
       arr = text.split(' ', 2)
@@ -66,11 +68,10 @@ module Jekyll
       node = NodeUtil.node_from_slug(context.registers[:site], slug)
       data = node.data
       data['url'] = "#{node.url}"
-      key = 'node_data'
-      old_data = context[key]
-      context[key] = data
-      result = template = Liquid::Template.parse("{{ #{key} #{@rest} }}").render(context)
-      context[key] = old_data
+      old_data = context[DATA_KEY]
+      context[DATA_KEY] = data
+      result = template = Liquid::Template.parse("{{ #{DATA_KEY} #{@rest} }}").render(context)
+      context[DATA_KEY] = old_data
       result
     end
   end

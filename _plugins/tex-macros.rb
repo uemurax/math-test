@@ -1,7 +1,9 @@
-class TeXMacros
+module TeXMacros
+  extend self
+
   DEFAULTS = {}
 
-  def self.to_antex_macros(macros)
+  def to_antex_macros(macros)
     macros.reduce("") {|s, (key, d)|
       nargs = d['nargs']
       body = d['body']
@@ -9,13 +11,13 @@ class TeXMacros
     }
   end
 
-  def self.to_katex_macros(macros)
+  def to_katex_macros(macros)
     macros.reduce({}) {|h, (key, d)|
       h.merge({key => d['body']})
     }
   end
 
-  def self.hook(site)
+  def hook(site)
     macros = DEFAULTS.merge(site.config['tex_macros'] || {})
 
     antex_preamble = site.config.dig('antex', 'preamble') || ""
