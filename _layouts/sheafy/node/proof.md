@@ -19,6 +19,9 @@
     </header>
     {% unless is_subroot %}<div class="collapsible-content" style="display: none;">{% endunless %}
 {:/}
+{% if is_subroot %}
+{% node page.of_proposition | node_content | quote %}
+{% endif %}
 {{ content }}
 {::nomarkdown}
     {% unless is_subroot %}</div>{% endunless %}

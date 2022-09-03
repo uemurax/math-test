@@ -43,6 +43,10 @@ module Jekyll
     def node_fullref(data)
       "<a href='#{node_url(data)}'>#{node_fullref_nolink(data)}</a>"
     end
+
+    def node_content(data)
+      data['content']
+    end
   end
 
   module NodeUtil
@@ -67,7 +71,8 @@ module Jekyll
       slug = Liquid::Template.parse("{{ #{@slug_exp} }}").render(context)
       node = NodeUtil.node_from_slug(context.registers[:site], slug)
       data = node.data
-      data['url'] = "#{node.url}"
+      data['url'] = node.url
+      data['content'] = node.content
       old_data = context[DATA_KEY]
       context[DATA_KEY] = data
       result = template = Liquid::Template.parse("{{ #{DATA_KEY} #{@rest} }}").render(context)
