@@ -1,3 +1,6 @@
+{% unless page.of_proposition %}
+{{ "missing required field 'of_proposition' in a proof node" | error }}
+{% endunless %}
 {::nomarkdown}
 {% if page.subroot == page %}
 {% assign is_subroot = true %}
