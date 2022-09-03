@@ -1,0 +1,6 @@
+{{ include.page | node_ref }}
+<span class='genus'>{{ include.page.genus }}</span>
+{% assign has_title = include.page | node_has_title? %}
+{% if has_title %}
+({{ include.page.title }})
+{% endif %}

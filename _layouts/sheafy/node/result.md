@@ -1,9 +1,7 @@
 <section id="{{ page.slug }}">
 {::nomarkdown}
   <header class="inline">
-    {{ page | node_ref }}
-    <span class='genus'>{{ page.genus }}</span>
-    ({{ page.title }})
+    {% include result-header.html page=page %}
   </header>
 {:/}
 {{ content }}

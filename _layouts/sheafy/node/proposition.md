@@ -2,9 +2,7 @@
 
 {::nomarkdown}
   <header class="inline">
-    {{ page | node_ref }}
-    <span class='genus'>{{ page.genus }}</span>
-    ({{ page.title }})
+    {% include result-header.html page=page %}
     {% capture proofs -%}
     {% for proof in site.nodes | where: "taxon", "proof" -%}
     {% if proof.of_proposition == page.slug -%}
