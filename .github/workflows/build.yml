@@ -15,4 +15,4 @@ jobs:
           fetch-depth: 0
 
       - name: Build
-        uses: .github/actions/build
+        uses: ./.github/actions/build
